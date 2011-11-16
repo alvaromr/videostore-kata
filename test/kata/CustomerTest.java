@@ -13,6 +13,8 @@ public class CustomerTest {
 		Customer c = new Customer("Ernesto Arroyo");
 		c.addRental(r);
 		String st = c.statement();
-		assertEquals("fail", st);
-	}
+		assertEquals("Rental Record for Ernesto Arroyo\n"+
+				"\tHeat\t6.0\n"+
+				"Amount owed is 6.0\n"+
+				"You earned 2 frequent renter points", st);	}
 }
