@@ -8,6 +8,11 @@ public class CustomerTest {
 
 	@Test
 	public void testStatement() {
-		fail ("not implemented");
+		Movie movie = new Movie("Heat",1);
+		Rental r = new Rental(movie, 2);
+		Customer c = new Customer("Ernesto Arroyo");
+		c.addRental(r);
+		String st = c.statement();
+		assertEquals("fail", st);
 	}
 }
