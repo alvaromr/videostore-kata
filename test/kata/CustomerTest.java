@@ -7,7 +7,7 @@ import org.junit.Test;
 public class CustomerTest {
 
 	@Test
-	public void testStatement() {
+	public void testNewRelease() {
 		Movie movie = new Movie("Heat",Movie.NEW_RELEASE);
 		Rental r = new Rental(movie, 2);
 		Customer c = new Customer("Ernesto Arroyo");
@@ -19,7 +19,7 @@ public class CustomerTest {
 				"You earned 2 frequent renter points", st);	}
 	
 	@Test
-	public void testStatement2() {
+	public void testChildrensMenosDe3Dias() {
 		Movie movie = new Movie("Cars2",Movie.CHILDRENS);
 		Rental r = new Rental(movie, 2);
 		Customer c = new Customer("Ernesto Arroyo");
