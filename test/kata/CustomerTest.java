@@ -50,8 +50,8 @@ public class CustomerTest {
 		c.addRental(r);
 		String st = c.statement();
 		assertEquals("Rental Record for Ernesto Arroyo\n"+
-				"\tTorero\t1.5\n"+
-				"Amount owed is 1.5\n"+
+				"\tTorero\t2.0\n"+
+				"Amount owed is 2.0\n"+
 				"You earned 1 frequent renter points", st);	}
 	
 }
