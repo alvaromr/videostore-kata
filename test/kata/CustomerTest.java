@@ -17,4 +17,16 @@ public class CustomerTest {
 				"\tHeat\t6.0\n"+
 				"Amount owed is 6.0\n"+
 				"You earned 2 frequent renter points", st);	}
+	
+	@Test
+	public void testStatement2() {
+		Movie movie = new Movie("Cars2",Movie.CHILDRENS);
+		Rental r = new Rental(movie, 2);
+		Customer c = new Customer("Ernesto Arroyo");
+		c.addRental(r);
+		String st = c.statement();
+		assertEquals("Rental Record for Ernesto Arroyo\n"+
+				"\tHeat\t6.0\n"+
+				"Amount owed is 6.0\n"+
+				"You earned 2 frequent renter points", st);	}
 }
