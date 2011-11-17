@@ -29,4 +29,18 @@ public class CustomerTest {
 				"\tCars2\t1.5\n"+
 				"Amount owed is 1.5\n"+
 				"You earned 1 frequent renter points", st);	}
+	
+	@Test
+	public void testChildrensMasDe3Dias() {
+		Movie movie = new Movie("Cars2",Movie.CHILDRENS);
+		Rental r = new Rental(movie, 7);
+		Customer c = new Customer("Ernesto Arroyo");
+		c.addRental(r);
+		String st = c.statement();
+		assertEquals("Rental Record for Ernesto Arroyo\n"+
+				"\tCars2\t1.5\n"+
+				"Amount owed is 1.5\n"+
+				"You earned 1 frequent renter points", st);	}
+	
+	
 }
