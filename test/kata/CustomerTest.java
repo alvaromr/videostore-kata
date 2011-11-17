@@ -66,4 +66,18 @@ public class CustomerTest {
 				"Amount owed is 6.5\n"+
 				"You earned 1 frequent renter points", st);	}
 	
+	@Test
+	public void testDeTodoUnPoco() {
+		Movie movie = new Movie("Torero",Movie.REGULAR);
+		Movie movie2 = new Movie("Cars2",Movie.CHILDRENS);
+		Rental r = new Rental(movie, 5);
+		Rental r2 = new Rental(movie2, 2);
+		Customer c = new Customer("Ernesto Arroyo");
+		c.addRental(r);
+		c.addRental(r2);
+		String st = c.statement();
+		assertEquals("Rental Record for Ernesto Arroyo\n"+
+				"\tTorero\t6.5\n"+
+				"Amount owed is 6.5\n"+
+				"You earned 1 frequent renter points", st);	}
 }
