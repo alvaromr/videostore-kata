@@ -8,7 +8,7 @@ public class CustomerTest {
 
 	@Test
 	public void testStatement() {
-		Movie movie = new Movie("Heat",1);
+		Movie movie = new Movie("Heat",Movie.NEW_RELEASE);
 		Rental r = new Rental(movie, 2);
 		Customer c = new Customer("Ernesto Arroyo");
 		c.addRental(r);
