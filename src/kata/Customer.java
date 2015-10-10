@@ -6,7 +6,7 @@ import java.util.Vector;
 
 class Customer {
     private String name;
-    private Vector rentals = new Vector();
+    private Vector<Rental> rentals = new Vector<>();
 
     public Customer(String name) {
         this.name = name;
@@ -21,10 +21,8 @@ class Customer {
     }
 
     public String statement() {
-        Enumeration rentals = this.rentals.elements();
         String result = "Rental Record for " + getName() + "\n";
-        while (rentals.hasMoreElements()) {
-            Rental each = (Rental) rentals.nextElement();
+        for(Rental each : this.rentals){
             // show figures for this rental
             result += "\t" + each.getMovie().getTitle() + "\t"
                     + String.valueOf(each.getCharge()) + "\n";
@@ -38,9 +36,7 @@ class Customer {
 
     private double getTotalCharge(){
         double totalCharge = 0.0;
-        Enumeration rentals = this.rentals.elements();
-        while(rentals.hasMoreElements()){
-            Rental each = (Rental) rentals.nextElement();
+        for(Rental each : this.rentals){
             totalCharge += each.getCharge();
         }
         return totalCharge;
@@ -48,9 +44,7 @@ class Customer {
 
     private int getTotalFrequentRenterPoints(){
         int totalFrequentRenterPoints = 0;
-        Enumeration rentals = this.rentals.elements();
-        while(rentals.hasMoreElements()){
-            Rental each = (Rental) rentals.nextElement();
+        for(Rental each : this.rentals){
             totalFrequentRenterPoints += each.getFrequentRenterPoints();
         }
         return totalFrequentRenterPoints;
