@@ -30,6 +30,21 @@ class Customer {
         return result;
     }
 
+    public String statementHTML() {
+        String result = "<h1>" + getRentalRecordName() + "</h1>";
+        result += "<table>";
+        for(Rental each : this.rentals){
+            result += "<tr>";
+            result += "<td>" + getMovieTitle(each)  + "</td>";
+            result += "<td>" + getMovieCharge(each) + "</td>";
+            result += "</tr>";
+        }
+        result += "</table>";
+        result += "<p>" + getOwed() + "</p>";
+        result += "<p>" + getEarned() + "</p>";
+        return result;
+    }
+
     private String getRentalRecordName() {
         return "Rental Record for " + getName();
     }
