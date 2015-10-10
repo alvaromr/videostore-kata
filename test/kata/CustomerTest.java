@@ -14,6 +14,11 @@ public class CustomerTest {
         name = "Alvaro Martin";
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void testIllegalPrice(){
+        Movie movie = new Movie("Ilegal", -1);
+    }
+
     @Test
     public void testNewRelease() {
         Movie movie = new Movie("Heat", PriceFactory.NEW_RELEASE);
