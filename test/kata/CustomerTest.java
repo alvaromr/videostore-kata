@@ -8,7 +8,7 @@ public class CustomerTest {
 
     @Test
     public void testNewRelease() {
-        Movie movie = new Movie("Heat", Movie.NEW_RELEASE);
+        Movie movie = new Movie("Heat", PriceFactory.NEW_RELEASE);
         Rental r = new Rental(movie, 2);
         Customer c = new Customer("Ernesto Arroyo");
         c.addRental(r);
@@ -21,7 +21,7 @@ public class CustomerTest {
 
     @Test
     public void testChildrensMenosDe3Dias() {
-        Movie movie = new Movie("Cars2", Movie.CHILDRENS);
+        Movie movie = new Movie("Cars2", PriceFactory.CHILDRENS);
         Rental r = new Rental(movie, 2);
         Customer c = new Customer("Ernesto Arroyo");
         c.addRental(r);
@@ -34,7 +34,7 @@ public class CustomerTest {
 
     @Test
     public void testChildrensMasDe3Dias() {
-        Movie movie = new Movie("Cars2", Movie.CHILDRENS);
+        Movie movie = new Movie("Cars2", PriceFactory.CHILDRENS);
         Rental r = new Rental(movie, 7);
         Customer c = new Customer("Ernesto Arroyo");
         c.addRental(r);
@@ -47,7 +47,7 @@ public class CustomerTest {
 
     @Test
     public void testRegularMenosDe3Dias() {
-        Movie movie = new Movie("Torero", Movie.REGULAR);
+        Movie movie = new Movie("Torero", PriceFactory.REGULAR);
         Rental r = new Rental(movie, 2);
         Customer c = new Customer("Ernesto Arroyo");
         c.addRental(r);
@@ -60,7 +60,7 @@ public class CustomerTest {
 
     @Test
     public void testRegularMasDe3Dias() {
-        Movie movie = new Movie("Torero", Movie.REGULAR);
+        Movie movie = new Movie("Torero", PriceFactory.REGULAR);
         Rental r = new Rental(movie, 5);
         Customer c = new Customer("Ernesto Arroyo");
         c.addRental(r);
@@ -73,8 +73,8 @@ public class CustomerTest {
 
     @Test
     public void testDeTodoUnPoco() {
-        Movie movie = new Movie("Torero", Movie.REGULAR);
-        Movie movie2 = new Movie("Cars2", Movie.CHILDRENS);
+        Movie movie = new Movie("Torero", PriceFactory.REGULAR);
+        Movie movie2 = new Movie("Cars2", PriceFactory.CHILDRENS);
         Rental r = new Rental(movie, 5);
         Rental r2 = new Rental(movie2, 2);
         Customer c = new Customer("Ernesto Arroyo");
