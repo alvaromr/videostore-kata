@@ -18,10 +18,10 @@ class Rental {
     }
 
     double getCharge() {
-        return this.getMovie().getCharge(this.daysRented);
+        return this.movie.getCharge(this.daysRented);
     }
 
     int getFrequentRenterPoints() {
-        return this.getMovie().getFrequentRenterPoints(this.daysRented);
+        return this.movie.getFrequentRenterPoints(this.daysRented);
     }
 }
