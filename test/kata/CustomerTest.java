@@ -110,26 +110,49 @@ public class CustomerTest {
     }
 
     @Test
+    public void testSuperDeal() {
+        Movie movie = new Movie("Origen", PriceFactory.SUPER_DEAL);
+        Rental r = new Rental(movie, 2);
+        Customer c = new Customer(name);
+        c.addRental(r);
+        String st = c.statement();
+        assertEquals("Rental Record for " + name + "\n" +
+                "\tOrigen\t2.0\n" +
+                "Amount owed is 2.0\n" +
+                "You earned 0 frequent renter points", st);
+        String html = c.statementHTML();
+        assertEquals("<h1>Rental Record for " + name + "</h1>" +
+                "<table><tr><td>Origen</td><td>2.0</td></tr></table>" +
+                "<p>Amount owed is 2.0</p>" +
+                "<p>You earned 0 frequent renter points</p>", html);
+    }
+
+    @Test
     public void testDeTodoUnPoco() {
         Movie movie = new Movie("Torero", PriceFactory.REGULAR);
         Movie movie2 = new Movie("Cars2", PriceFactory.CHILDRENS);
+        Movie movie3 = new Movie("Origen", PriceFactory.SUPER_DEAL);
         Rental r = new Rental(movie, 5);
         Rental r2 = new Rental(movie2, 2);
+        Rental r3 = new Rental(movie3, 2);
         Customer c = new Customer(name);
         c.addRental(r);
         c.addRental(r2);
+        c.addRental(r3);
         String st = c.statement();
         assertEquals("Rental Record for " + name + "\n" +
                 "\tTorero\t6.5\n" +
                 "\tCars2\t1.5\n" +
-                "Amount owed is 8.0\n" +
+                "\tOrigen\t2.0\n" +
+                "Amount owed is 10.0\n" +
                 "You earned 2 frequent renter points", st);
 
         String html = c.statementHTML();
         assertEquals("<h1>Rental Record for " + name + "</h1>" +
                 "<table><tr><td>Torero</td><td>6.5</td></tr>" +
-                "<tr><td>Cars2</td><td>1.5</td></tr></table>" +
-                "<p>Amount owed is 8.0</p>" +
+                "<tr><td>Cars2</td><td>1.5</td></tr>" +
+                "<tr><td>Origen</td><td>2.0</td></tr></table>" +
+                "<p>Amount owed is 10.0</p>" +
                 "<p>You earned 2 frequent renter points</p>", html);
     }
 }
