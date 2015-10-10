@@ -1,17 +1,18 @@
 package kata;
 
-import java.util.Vector;
+import java.util.ArrayList;
+import java.util.List;
 
 class Customer {
     private String name;
-    private Vector<Rental> rentals = new Vector<>();
+    private List<Rental> rentals = new ArrayList<>();
 
     public Customer(String name) {
         this.name = name;
     }
 
     public void addRental(Rental arg) {
-        rentals.addElement(arg);
+        rentals.add(arg);
     }
 
     public String getName() {
